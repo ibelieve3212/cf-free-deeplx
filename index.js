@@ -6,7 +6,7 @@ const targetURLs = TARGET_URL.split(',');
 const maxRetries = 5;
 
 // 添加 GitHub 仓库的 URL
-const githubUrl = 'https://raw.githubusercontent.com/your-username/your-repo/main/variable.txt';
+const githubUrl = 'https://raw.githubusercontent.com/ibelieve3212/serch_deeplx/main/success_result.txt';
 
 async function handleRequest(originalRequest) {
     let response;
