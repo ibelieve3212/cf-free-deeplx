@@ -5,8 +5,16 @@ addEventListener('fetch', (event) => {
 const targetURLs = TARGET_URL.split(',');
 const maxRetries = 5;
 
+// 添加 GitHub 仓库的 URL
+const githubUrl = 'https://raw.githubusercontent.com/your-username/your-repo/main/variable.txt';
+
 async function handleRequest(originalRequest) {
     let response;
+
+    // 从 GitHub 获取变量文本文件内容
+    const variableResponse = await fetch(githubUrl);
+    const variableText = await variableResponse.text();
+    const targetURLs = variableText.split(',');
 
     for (let retry = 0; retry < maxRetries; retry++) {
         const randomIndex = Math.floor(Math.random() * targetURLs.length);
